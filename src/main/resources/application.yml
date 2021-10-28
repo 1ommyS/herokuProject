@@ -1,11 +1,12 @@
 spring:
   datasource:
-    url: "jdbc:postgresql://localhost:54320/postgres?currentSchema=public"
-    username: postgres
-    password: localPostgres
+    url: "jdbc:postgresql://ec2-34-242-89-204.eu-west-1.compute.amazonaws.com:5432/d4380lnnv01ht2
+    username: vtggqopyaopsbf
+    password: 5bc2d8b1cb33995237e4e0ab123c460c5790ea3b8f5fab1be874a2e76086b3b7
   jpa:
     hibernate:
-      ddl-auto: update
+      ddl-auto: create
     show-sql: true
 server:
-  port: 42100
+  port: 8006
+

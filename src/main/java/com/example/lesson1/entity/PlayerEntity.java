@@ -13,9 +13,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
-import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
-import javax.persistence.OneToOne;
 import javax.persistence.SequenceGenerator;
 import java.util.List;
 
@@ -38,8 +36,7 @@ public class PlayerEntity {
 
     private String profileInfo;
 
-    @OneToMany()
-    @JoinColumn()
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER, orphanRemoval = true, mappedBy = "playerEntity")
     private List<Weapon> weapons;
 
 }

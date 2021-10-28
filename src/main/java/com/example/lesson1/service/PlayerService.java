@@ -6,13 +6,16 @@ import com.example.lesson1.dto.PlayerDTO;
 import com.example.lesson1.dto.ResponseDTO;
 import com.example.lesson1.entity.PlayerEntity;
 import com.example.lesson1.entity.PlayerStatus;
+import com.example.lesson1.entity.Weapon;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
+import javax.annotation.PostConstruct;
 import javax.persistence.EntityNotFoundException;
+import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
@@ -54,6 +57,31 @@ public class PlayerService {
                 .nickname(playerEntity.getNickName())
                 .id(playerEntity.getId())
                 .description(playerEntity.getProfileInfo()).build();
+    }
+
+    @PostConstruct
+    public void t() {
+//        PlayerEntity saved = playerRepository.save(
+//                PlayerEntity.builder()
+//                        .terminated(false)
+//                        .nickName("Ivan")
+//                        .profileInfo("test")
+//                        .weapons(
+//                                Collections.singletonList(
+//                                        Weapon.builder()
+//                                                .broken(false)
+//                                                .name("test")
+//                                                .detailedName("test gun")
+//                                                .range(100)
+//                                                .damage(2)
+//                                                .build()
+//                                )
+//                        ).build()
+//        );
+//        System.out.println(saved);
+        Optional<PlayerEntity> byId = playerRepository.findById(2L);
+        System.out.println(byId);
+
     }
 
 }

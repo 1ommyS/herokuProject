@@ -44,7 +44,8 @@ public class Weapon {
 
     private Boolean broken;
 
-    @ManyToOne()
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "player_entity_id")
     private PlayerEntity playerEntity;
 
 }
