@@ -79,9 +79,9 @@ public class PlayerService {
 //                        ).build()
 //        );
 //        System.out.println(saved);
-        Optional<PlayerEntity> byId = playerRepository.findById(2L);
-        System.out.println(byId);
-
+//        Optional<PlayerEntity> byId = playerRepository.findById(2L);
+//        System.out.println(byId);
+        System.out.println("Hi world");
     }
 
 }
